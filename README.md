@@ -32,3 +32,20 @@ binary classification of diagnosis outcomes.
 - Max heart rate by diagnosis
 - Serum cholesterol by diagnosis
 - ST slope by diagnosis
+
+### FDA MAUDE Adverse Event Analysis (2024)
+**Data:** FDA MAUDE (Manufacturer and User Facility Device Experience) database (2024)
+**Tools:** Python, pandas, matplotlib
+
+Exploratory analysis of 2.6 million adverse event reports from the FDA MAUDE database.
+Includes memory optimization for large dataset handling, column selection, datetime filtering,
+and categorical encoding. Analysis covers device categories, reporting trends, manufacturer
+origin, reporter type, device evaluation rates, and post-event device availability.
+
+**Charts:**
+- Top 15 device categories by adverse event volume
+- Adverse events by month
+- Adverse events by manufacturer origin (US vs foreign)
+- Adverse events by reporter type
+- Device evaluation rate by manufacturer
+- Device availability after adverse event
