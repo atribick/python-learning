@@ -33,7 +33,7 @@ y = df["num"]
 # One-hot encode categoricals (drop_first avoids multicollinearity)
 X = pd.get_dummies(X, drop_first=True)
 
-# 80/20 train-test split, stratify preserves class ratio in both sets
+# 80/20 split, stratify preserves class ratio in both sets
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42, stratify=y
 )

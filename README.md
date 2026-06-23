@@ -17,7 +17,7 @@ by product type and month.
 - Top 10 product areas by recall count
 - Recall frequency by month
 
-### UCI Heart Disease Dataset
+### UCI Heart Disease Dataset — EDA
 **Data:** UCI Heart Disease dataset via Kaggle (920 patients, 4 clinical sites)
 **Tools:** Python, pandas, matplotlib, seaborn
 
@@ -32,6 +32,23 @@ binary classification of diagnosis outcomes. Visualizations built with seaborn.
 - Max heart rate by diagnosis
 - Serum cholesterol by diagnosis
 - ST slope by diagnosis
+
+### UCI Heart Disease Dataset — Classification Model
+**Data:** UCI Heart Disease dataset via Kaggle (462 patients after cleaning)
+**Tools:** Python, pandas, scikit-learn, matplotlib, seaborn
+
+Binary classification model predicting heart disease presence. Includes feature encoding,
+train/test split with stratification, feature scaling, and evaluation via confusion matrix
+and classification report. Compares Logistic Regression and Random Forest performance,
+with 5-fold cross-validation scored on recall given the medical screening context.
+
+**Results:**
+- Logistic Regression: 82.8% accuracy, 0.831 recall (CV)
+- Random Forest: 78.5% accuracy, 0.841 recall (CV)
+
+**Outputs:**
+- Confusion matrices for both models
+- Feature importance plot with clinical interpretation
 
 ### FDA MAUDE Adverse Event Analysis (2024)
 **Data:** FDA MAUDE (Manufacturer and User Facility Device Experience) database (2024)
