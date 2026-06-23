@@ -19,11 +19,11 @@ by product type and month.
 
 ### UCI Heart Disease Dataset
 **Data:** UCI Heart Disease dataset via Kaggle (920 patients, 4 clinical sites)
-**Tools:** Python, pandas, matplotlib
+**Tools:** Python, pandas, matplotlib, seaborn
 
 Exploratory analysis of clinical indicators associated with heart disease diagnosis.
 Includes handling of missing data, removal of physiologically impossible values, and
-binary classification of diagnosis outcomes.
+binary classification of diagnosis outcomes. Visualizations built with seaborn.
 
 **Charts:**
 - Diagnosis distribution
