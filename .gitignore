@@ -4,4 +4,4 @@ __pycache__/
 *.txt
 *.xlsx
 *.csv
-*.zip
+*.zip.DS_Store
