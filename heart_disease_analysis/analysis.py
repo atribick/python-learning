@@ -23,6 +23,8 @@ df = df[(df["chol"] > 0) & (df["trestbps"] > 0) & (df["thalch"] > 0)]
 # Simplify diagnosis to binary: 0 = no disease, 1 = disease
 df["num"] = df["num"].apply(lambda x: 1 if x > 0 else 0)
 
+df.to_csv('data/heart_disease_cleaned.csv', index=False)
+
 # Chart 1: Diagnosis distribution
 fig, ax = plt.subplots(figsize=(8, 6))
 sns.countplot(data=df, x="num", hue="num", legend=False, palette=palette)
