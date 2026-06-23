@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix, roc_curve, auc
 from sklearn.model_selection import cross_val_score, train_test_split
 from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
@@ -79,3 +79,28 @@ rf_cv_scores = cross_val_score(rf, X_train, y_train, cv=5, scoring="recall")
 print("=== Cross-Validation Recall Scores (5-Fold) ===")
 print(f"Logistic Regression: {lr_cv_scores.mean():.3f} +/- {lr_cv_scores.std():.3f}")
 print(f"Random Forest:       {rf_cv_scores.mean():.3f} +/- {rf_cv_scores.std():.3f}")
+
+# Compute ROC curve and AUC for both models
+lr_probs = lr.predict_proba(X_test)[:,1]
+rf_probs = rf.predict_proba(X_test)[:,1]
+
+lr_fpr, lr_tpr, _ = roc_curve(y_test, lr_probs)
+rf_fpr, rf_tpr, _ = roc_curve(y_test, rf_probs)
+
+lr_auc = auc(lr_fpr, lr_tpr)
+rf_auc = auc(rf_fpr, rf_tpr)
+
+# Plot ROC curves
+plt.figure(figsize=(8,6))
+plt.plot(lr_fpr, lr_tpr, label=f"Logistic Regression (AUC = {lr_auc:.3f}")
+plt.plot(rf_fpr, rf_tpr, label=f"Random Forest (AUC = {lr_auc:.3f}")
+plt.plot([0, 1], [0, 1], "k--", label="Random Chance")
+plt.xlabel("False Positive Rate")
+plt.ylabel("True Positive Rate (Recall)")
+plt.title("ROC Curve - Logistic Regression vs Random Forest")
+plt.legend()
+plt.tight_layout()
+plt.show()
+
+print(f"Logistic Regression AUC: {lr_auc:.3f}")
+print(f"Random Forest AUC: {rf_auc:.3f}")

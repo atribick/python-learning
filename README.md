@@ -41,14 +41,16 @@ Binary classification model predicting heart disease presence. Includes feature 
 train/test split with stratification, feature scaling, and evaluation via confusion matrix
 and classification report. Compares Logistic Regression and Random Forest performance,
 with 5-fold cross-validation scored on recall given the medical screening context.
+ROC curves and AUC scores provide threshold-independent comparison of both models.
 
 **Results:**
-- Logistic Regression: 82.8% accuracy, 0.831 recall (CV)
-- Random Forest: 78.5% accuracy, 0.841 recall (CV)
+- Logistic Regression: 82.8% accuracy, 0.831 recall (CV), 0.891 AUC
+- Random Forest: 78.5% accuracy, 0.841 recall (CV), 0.870 AUC
 
 **Outputs:**
 - Confusion matrices for both models
 - Feature importance plot with clinical interpretation
+- ROC curve comparing both models
 
 ### FDA MAUDE Adverse Event Analysis (2024)
 **Data:** FDA MAUDE (Manufacturer and User Facility Device Experience) database (2024)
